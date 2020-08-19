@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import MenuBar from "./MenuBar";
-import Editor from "./Editor.js";
+import Container from "./Container.js";
 
 class MainWindow extends Component {
   render() {
     return (
-      <div className="container-main theme-dark">
+      <div className="main-window theme-dark">
         <MenuBar title={"nivas-profile"} />
-        <Editor />
+        <Container />
       </div>
     );
   }

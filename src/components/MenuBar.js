@@ -6,7 +6,7 @@ class MenuBar extends Component {
 
   render() {
     const getMenuItemsToRender = () => {
-      return this.menuItems.map(item => <li>{item}</li>);
+      return this.menuItems.map((item) => <li key={item}>{item}</li>);
     };
 
     const getMenuCommandsToRender = () => {
@@ -36,7 +36,7 @@ class MenuBar extends Component {
         <div className="menubar-items">
           <ul>{getMenuItemsToRender()}</ul>
         </div>
-        <div class="menubar-title">{this.props.title}</div>
+        <div className="menubar-title">{this.props.title}</div>
         <div className="menubar-commands">{getMenuCommandsToRender()}</div>
       </div>
     );
