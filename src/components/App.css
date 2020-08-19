@@ -1,11 +1,14 @@
 :root {
   --dark-theme-bg-color: #484343;
   --dark-theme-font-color: #e5e5e5;
+  --dark-theme-bg-color-hov: #666565;
+  --dark-theme-font-color-hov: #ffffff;
 }
 
 * {
   box-sizing: border-box;
   font-family: monospace, "Courier New", Courier;
+  font-size: 16px;
 }
 
 body {
@@ -26,7 +29,6 @@ body {
 }
 
 .container-main {
-  padding: 10px;
   height: 100%;
   display: grid;
   grid-template-rows: 30px;
@@ -34,21 +36,58 @@ body {
   gap: 5px;
 }
 
-.menu-bar-top {
+.btn-icon {
+  border: none;
+  /* padding: 3px; */
+  font-size: 16px;
+  background: transparent;
+  cursor: pointer;
+  color: var(--dark-theme-font-color);
+}
+
+/* ------------------------------- */
+/* menu bar */
+
+.menubar-top {
   display: grid;
   grid-template-columns: 40% 20% 40%;
 }
 
-.toolbar-menu-list ul,
-.toolbar-icons ul {
+.menubar-items ul,
+.menubar-commands ul {
   padding: 0;
   margin: 0;
   list-style: none;
   display: flex;
   flex-flow: row wrap;
-  gap: 20px;
+  height: 100%;
+  align-items: center;
 }
 
-.toolbar-icons ul {
+.menubar-commands ul {
   justify-content: flex-end;
 }
+
+.menubar-items li,
+.menubar-commands li {
+  padding: 8px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.menubar-items li:hover,
+.menubar-commands li:hover {
+  background-color: var(--dark-theme-bg-color-hov);
+  color: var(--dark-theme-font-color-hov);
+}
+
+.menubar-commands li.command-exit:hover {
+  background-color: #ff4d4d;
+}
+
+.menubar-title {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+/* ------------------------------- */
