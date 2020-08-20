@@ -1,15 +1,17 @@
 :root {
-  --dark-theme-bg-color: #484343;
+  --dark-theme-bg-color: #020202;
   --dark-theme-font-color: #e5e5e5;
   --dark-theme-bg-color-hov: #666565;
   --dark-theme-font-color-hov: #ffffff;
-  --dark-theme-bg-color-2: #6a6262;
+  --dark-theme-bg-color-2: #1e1f24;
+  --dark-theme-bg-color-3: #191a1f;
+  --dark-theme-bg-color-4: #121212;
 }
 
 * {
   box-sizing: border-box;
   font-family: sans-serif, monospace;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 body {
@@ -53,6 +55,11 @@ body {
   font-size: 26px;
 }
 
+.logo-small {
+  color: #4dabf7;
+  display: inline;
+  margin: 0 5px;
+}
 /* ------------------------------- */
 /* menu bar */
 
@@ -66,13 +73,17 @@ body {
   padding: 0;
   margin: 0;
   list-style: none;
-  display: flex;
   flex-flow: row wrap;
   height: 100%;
   align-items: center;
 }
 
+.menubar-items ul {
+  display: inline-flex;
+}
+
 .menubar-commands ul {
+  display: flex;
   justify-content: flex-end;
 }
 
@@ -107,7 +118,7 @@ body {
 }
 
 /* ------------------------------- */
-/*  */
+/* toolbar */
 
 .toolbar-left {
   display: flex;
@@ -132,3 +143,31 @@ body {
   color: white;
 }
 /* ------------------------------- */
+/* editors */
+.explorer {
+  background-color: var(--dark-theme-bg-color-3);
+}
+
+.editor-list {
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  height: auto;
+}
+
+.collapsed-edtior {
+  max-height: 0;
+}
+
+.editor-label {
+  user-select: none;
+  cursor: pointer;
+  padding: 10px 0 0 3px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* editor */
+
+.editor {
+  background-color: var(--dark-theme-bg-color-4);
+}

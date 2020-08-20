@@ -19,7 +19,12 @@ class Toolbar extends Component {
             </button>
           </li>
           <li>
-            <a className="btn-icon-large" href={this.gitLink} target="_blank">
+            <a
+              className="btn-icon-large"
+              rel="noopener noreferrer"
+              href={this.gitLink}
+              target="_blank"
+            >
               <i className="fas fa-code-branch"></i>
             </a>
           </li>
@@ -40,6 +45,7 @@ class Toolbar extends Component {
               className="btn-icon-large"
               href={this.profileLink}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="far fa-user-circle"></i>
             </a>

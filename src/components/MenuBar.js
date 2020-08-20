@@ -34,6 +34,10 @@ class MenuBar extends Component {
     return (
       <div className="menubar-top">
         <div className="menubar-items">
+          <span className="logo-small">
+            <i className="fas fa-infinity"></i>
+          </span>
+
           <ul>{getMenuItemsToRender()}</ul>
         </div>
         <div className="menubar-title">{this.props.title}</div>
