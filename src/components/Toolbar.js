@@ -34,7 +34,7 @@ class Toolbar extends Component {
             </button>
           </li>
         </ul>
-        <ul style={{ position: "absolute", bottom: 0 }}>
+        <ul>
           <li>
             <a
               className="btn-icon-large"

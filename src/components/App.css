@@ -106,7 +106,13 @@ body {
   grid-template-columns: 60px 250px 1fr;
 }
 
+/* ------------------------------- */
+/*  */
+
 .toolbar-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--dark-theme-bg-color-2);
 }
 
@@ -120,5 +126,9 @@ body {
   padding: 8px;
   margin: 5px 0;
   text-align: center;
+}
+
+.toolbar-left .btn-icon-large:hover {
+  color: white;
 }
 /* ------------------------------- */
