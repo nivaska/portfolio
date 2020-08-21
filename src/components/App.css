@@ -166,8 +166,9 @@ body {
   font-weight: 700;
 }
 
+/* ------------------------------- */
 /* editor */
 
-.editor {
+.editor-frame {
   background-color: var(--dark-theme-bg-color-4);
 }

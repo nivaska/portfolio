@@ -6,7 +6,7 @@ class MenuBar extends Component {
 
   render() {
     const getMenuItemsToRender = () => {
-      return this.menuItems.map((item) => <li key={item}>{item}</li>);
+      return this.menuItems.map(item => <li key={item}>{item}</li>);
     };
 
     const getMenuCommandsToRender = () => {

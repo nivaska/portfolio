@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-class EditorsContainer extends Component {
+class EditorSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: props.title,
-      expanded: false,
+      expanded: false
     };
   }
   render() {
@@ -44,4 +44,4 @@ class EditorsContainer extends Component {
   }
 }
 
-export default EditorsContainer;
+export default EditorSelector;

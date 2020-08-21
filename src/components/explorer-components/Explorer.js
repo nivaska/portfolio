@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EditorsContainer from "./EditorsContainer";
+import EditorSelector from "./EditorSelector";
 
 class Explorer extends Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class Explorer extends Component {
   render() {
     return (
       <div className="explorer">
-        <EditorsContainer title="OPEN EDITORS" />
-        <EditorsContainer title="PORTFOLIO" />
+        <EditorSelector title="OPEN EDITORS" />
+        <EditorSelector title="PORTFOLIO" />
       </div>
     );
   }
