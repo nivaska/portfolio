@@ -6,7 +6,7 @@ class MainWindow extends Component {
   render() {
     return (
       <div className="main-window theme-dark">
-        <MenuBar title={"nivas-profile"} />
+        <MenuBar title={"Nivas"} />
         <Container />
       </div>
     );

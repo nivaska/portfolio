@@ -40,11 +40,18 @@ body {
 }
 
 .btn-icon,
+.btn-icon-small,
 .btn-icon-large {
   border: none;
   background: transparent;
   cursor: pointer;
   color: var(--dark-theme-font-color);
+}
+
+span.btn-icon,
+span.btn-icon-small,
+span.btn-ico-large {
+  padding: 0 10px;
 }
 
 .btn-icon i {
@@ -53,6 +60,10 @@ body {
 
 .btn-icon-large i {
   font-size: 26px;
+}
+
+.btn-icon-small i {
+  font-size: 14px;
 }
 
 .logo-small {
@@ -166,6 +177,19 @@ body {
   font-weight: 700;
 }
 
+.list-editors {
+  list-style: none;
+  padding: 0;
+}
+
+.list-editors li {
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.list-editors li:hover {
+  background-color: var(--dark-theme-bg-color);
+}
 /* ------------------------------- */
 /* editor */
 

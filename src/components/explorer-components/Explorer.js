@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import EditorSelector from "./EditorSelector";
+import OpenEditors from "./OpenEditors";
 
 class Explorer extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-
+  componentDidMount() {}
   render() {
     return (
       <div className="explorer">
-        <EditorSelector title="OPEN EDITORS" />
+        <OpenEditors title="OPEN EDITORS" />
         <EditorSelector title="PORTFOLIO" />
       </div>
     );
