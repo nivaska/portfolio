@@ -195,4 +195,34 @@ span.btn-ico-large {
 
 .editor-frame {
   background-color: var(--dark-theme-bg-color-4);
+  display: grid;
+  grid-template-rows: 25px;
+  grid-auto-rows: 1fr;
+}
+
+.editor-picker {
+  background-color: var(--dark-theme-bg-color-2);
+}
+
+.editor-picker-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.editor-picker-list li {
+  padding: 0 15px;
+  border: 2px solid var(--dark-theme-bg-color);
+  border-width: 0 1px 0 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.editor-picker-list li:hover {
+  background-color: var(--dark-theme-bg-color);
 }

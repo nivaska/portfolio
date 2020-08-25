@@ -7,7 +7,7 @@ class EditorSelector extends Component {
     super(props);
     this.state = {
       title: props.title,
-      expanded: false,
+      expanded: true
     };
   }
   render() {
@@ -20,15 +20,20 @@ class EditorSelector extends Component {
     };
 
     const renderFilesList = () => {
-      return this.props.files.map((file) => (
-        <li key={file.title} onClick={() => this.props.openFile(file)}>
-          <span className="btn-icon-small">
-            <i className="fas fa-file-alt"></i>
-          </span>
-          {file.title}
-        </li>
-      ));
+      return (
+        <ul className="list-editors">
+          {this.props.files.map(file => (
+            <li key={file.title} onClick={() => this.props.openFile(file)}>
+              <span className="btn-icon-small">
+                <i className="fas fa-file-alt"></i>
+              </span>
+              {file.title}
+            </li>
+          ))}
+        </ul>
+      );
     };
+
     return (
       <div>
         <div
@@ -46,16 +51,16 @@ class EditorSelector extends Component {
             !this.state.expanded ? "collapsed-edtior" : ""
           }`}
         >
-          <ul className="list-editors">{renderFilesList()}</ul>
+          {renderFilesList()}
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    files: state.allFiles,
+    files: state.allFiles
   };
 };
 

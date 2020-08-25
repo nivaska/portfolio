@@ -7,7 +7,7 @@ class OpenEditors extends Component {
     super(props);
     this.state = {
       title: props.title,
-      expanded: false,
+      expanded: true
     };
   }
   render() {
@@ -20,23 +20,28 @@ class OpenEditors extends Component {
     };
 
     const renderFilesList = () => {
-      return this.props.files.map((file) => (
-        <li key={file.title}>
-          <span className="btn-icon-small">
-            <i className="fas fa-file-alt"></i>
-          </span>
+      return (
+        <ul className="list-editors">
+          {this.props.files.map(file => (
+            <li key={file.title}>
+              <span className="btn-icon-small">
+                <i className="fas fa-file-alt"></i>
+              </span>
 
-          {file.title}
+              {file.title}
 
-          <button
-            className="btn-icon-small"
-            onClick={() => this.props.closeFile(file)}
-          >
-            <i className="fas fa-times"></i>{" "}
-          </button>
-        </li>
-      ));
+              <button
+                className="btn-icon-small"
+                onClick={() => this.props.closeFile(file)}
+              >
+                <i className="fas fa-times"></i>{" "}
+              </button>
+            </li>
+          ))}
+        </ul>
+      );
     };
+
     return (
       <div>
         <div
@@ -54,16 +59,16 @@ class OpenEditors extends Component {
             !this.state.expanded ? "collapsed-edtior" : ""
           }`}
         >
-          <ul className="list-editors">{renderFilesList()}</ul>
+          {renderFilesList()}
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    files: state.openFiles,
+    files: state.openFiles
   };
 };
 export default connect(mapStateToProps, { closeFile })(OpenEditors);
