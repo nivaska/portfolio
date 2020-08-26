@@ -7,7 +7,7 @@ class OpenEditors extends Component {
     super(props);
     this.state = {
       title: props.title,
-      expanded: true
+      expanded: true,
     };
   }
   render() {
@@ -22,7 +22,7 @@ class OpenEditors extends Component {
     const renderFilesList = () => {
       return (
         <ul className="list-editors">
-          {this.props.files.map(file => (
+          {this.props.files.map((file) => (
             <li key={file.title}>
               <span className="btn-icon-small">
                 <i className="fas fa-file-alt"></i>
@@ -34,7 +34,7 @@ class OpenEditors extends Component {
                 className="btn-icon-small"
                 onClick={() => this.props.closeFile(file)}
               >
-                <i className="fas fa-times"></i>{" "}
+                <i className="fas fa-times"></i>
               </button>
             </li>
           ))}
@@ -66,9 +66,9 @@ class OpenEditors extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    files: state.openFiles
+    files: state.openFiles,
   };
 };
 export default connect(mapStateToProps, { closeFile })(OpenEditors);

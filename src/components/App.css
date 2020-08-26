@@ -46,6 +46,7 @@ body {
   background: transparent;
   cursor: pointer;
   color: var(--dark-theme-font-color);
+  outline: none;
 }
 
 span.btn-icon,
@@ -225,4 +226,12 @@ span.btn-ico-large {
 
 .editor-picker-list li:hover {
   background-color: var(--dark-theme-bg-color);
+}
+
+.editor-picker-list .close-btn {
+  margin-left: 5px;
+}
+
+.editor-picker-list .close-btn {
+  margin-left: 5px;
 }
