@@ -5,20 +5,17 @@ const filesAvailable = () => {
     { title: "skills.txt", content: "c#, asp.net " },
     { title: "personal-info.txt", content: "c#, asp.net " },
     { title: "experience.txt", content: "software developer " },
-    { title: "contact.txt", content: "nivas.anand@umlaut.com " },
+    { title: "contact.txt", content: "nivas.anand@umlaut.com " }
   ];
 };
 
 const filesOpen = (state = [], action) => {
-  console.log(state);
-  console.log(action);
-
   switch (action.type) {
     case "FILE_CLOSED":
-      return state.filter((file) => file.title !== action.payload.title);
+      return state.filter(file => file.title !== action.payload.title);
     case "FILE_OPENED":
       if (
-        state.filter((file) => file.title === action.payload.title).length === 0
+        state.filter(file => file.title === action.payload.title).length === 0
       ) {
         return [...state, action.payload];
       }
@@ -30,6 +27,7 @@ const filesOpen = (state = [], action) => {
 const fileActive = (state = null, action) => {
   switch (action.type) {
     case "FILE_OPENED":
+    case "FILE_ACTIVE":
       return action.payload;
     default:
       return state;
@@ -39,5 +37,5 @@ const fileActive = (state = null, action) => {
 export default combineReducers({
   allFiles: filesAvailable,
   openFiles: filesOpen,
-  activeFile: fileActive,
+  activeFile: fileActive
 });

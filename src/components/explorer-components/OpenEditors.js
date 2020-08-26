@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { closeFile } from "../../redux/actions";
+import { closeFile, openFile, setFileActive } from "../../redux/actions";
 
 class OpenEditors extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: props.title,
-      expanded: true,
+      expanded: true
     };
   }
   render() {
@@ -20,24 +20,50 @@ class OpenEditors extends Component {
     };
 
     const renderFilesList = () => {
+      const closeOpenedFile = file => {
+        let newActiveFile = null;
+        if (this.props.files.length > 1)
+          newActiveFile = this.props.files
+            .filter(f => f.title !== file.title)
+            .pop();
+
+        this.props.closeFile(file);
+        this.props.setFileActive(newActiveFile);
+      };
+
       return (
         <ul className="list-editors">
-          {this.props.files.map((file) => (
-            <li key={file.title}>
-              <span className="btn-icon-small">
-                <i className="fas fa-file-alt"></i>
-              </span>
+          {this.props.files.map(file => {
+            const activeFileStyles =
+              this.props.activeFile &&
+              this.props.activeFile.title === file.title
+                ? "active-file"
+                : "";
 
-              {file.title}
-
-              <button
-                className="btn-icon-small"
-                onClick={() => this.props.closeFile(file)}
+            return (
+              <li
+                className={activeFileStyles}
+                key={file.title}
+                onClick={() => this.props.openFile(file)}
               >
-                <i className="fas fa-times"></i>
-              </button>
-            </li>
-          ))}
+                <button
+                  className="btn-icon-small close-btn"
+                  onClick={e => {
+                    e.stopPropagation();
+                    closeOpenedFile(file);
+                  }}
+                >
+                  <i className="fas fa-times"></i>
+                </button>
+
+                <span className="file-icon">
+                  <i className="fas fa-file-alt"></i>
+                </span>
+
+                <span>{file.title}</span>
+              </li>
+            );
+          })}
         </ul>
       );
     };
@@ -66,9 +92,12 @@ class OpenEditors extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     files: state.openFiles,
+    activeFile: state.activeFile
   };
 };
-export default connect(mapStateToProps, { closeFile })(OpenEditors);
+export default connect(mapStateToProps, { closeFile, openFile, setFileActive })(
+  OpenEditors
+);

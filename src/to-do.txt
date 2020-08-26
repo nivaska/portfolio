@@ -2,11 +2,16 @@ Help Menu-
 	* about site - site created info, technologies used (react, redux)
 	* about me - nivas, linkedin, xing, etc..
 
-add site logo
+* create modal
+* open explore only on click of 
+
+* add site logo
 * add tooltips, animations for loading
 * dark and light - theme change under settings menu
 * debug menu - use some animation
 * embed resume pdf
+
+
 
 * components - search, status bar, modal, context menu, command line
 * minimise button - hide window and show taskbar

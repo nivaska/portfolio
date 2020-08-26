@@ -1,11 +1,12 @@
 :root {
   --dark-theme-bg-color: #020202;
-  --dark-theme-font-color: #e5e5e5;
-  --dark-theme-bg-color-hov: #666565;
+  --dark-theme-font-color: #cccccc;
+  --dark-theme-bg-color-hov: #333333;
   --dark-theme-font-color-hov: #ffffff;
   --dark-theme-bg-color-2: #1e1f24;
   --dark-theme-bg-color-3: #191a1f;
   --dark-theme-bg-color-4: #121212;
+  --active-file: #33ff33;
 }
 
 * {
@@ -65,6 +66,10 @@ span.btn-ico-large {
 
 .btn-icon-small i {
   font-size: 14px;
+}
+
+.close-btn {
+  color: #999999;
 }
 
 .logo-small {
@@ -186,10 +191,30 @@ span.btn-ico-large {
 .list-editors li {
   padding: 5px 15px;
   cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 20px 15px 1fr;
+  grid-gap: 5px;
 }
 
 .list-editors li:hover {
   background-color: var(--dark-theme-bg-color);
+}
+
+.list-editors li .file-icon {
+  grid-column-start: 2;
+}
+
+.list-editors .close-btn {
+  visibility: hidden;
+}
+
+.list-editors li:hover .close-btn {
+  visibility: visible;
+}
+
+.list-editors .active-file {
+  color: var(--active-file);
 }
 /* ------------------------------- */
 /* editor */
@@ -224,14 +249,16 @@ span.btn-ico-large {
   height: 100%;
 }
 
-.editor-picker-list li:hover {
+.editor-picker-list li:hover,
+.editor-picker-list .active-file {
   background-color: var(--dark-theme-bg-color);
 }
 
 .editor-picker-list .close-btn {
   margin-left: 5px;
+  visibility: hidden;
 }
 
-.editor-picker-list .close-btn {
-  margin-left: 5px;
+.editor-picker-list li:hover .close-btn {
+  visibility: visible;
 }

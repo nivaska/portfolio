@@ -10,6 +10,16 @@ class EditorSelector extends Component {
       expanded: true
     };
   }
+
+  componentDidMount() {
+    const skillsFile = this.props.files.find(f => f.title === "skills.txt");
+    const experienceFile = this.props.files.find(
+      f => f.title === "experience.txt"
+    );
+    this.props.openFile(experienceFile);
+    this.props.openFile(skillsFile);
+  }
+
   render() {
     const getArrowIcon = () => {
       return this.state.expanded ? (
@@ -22,14 +32,26 @@ class EditorSelector extends Component {
     const renderFilesList = () => {
       return (
         <ul className="list-editors">
-          {this.props.files.map(file => (
-            <li key={file.title} onClick={() => this.props.openFile(file)}>
-              <span className="btn-icon-small">
-                <i className="fas fa-file-alt"></i>
-              </span>
-              {file.title}
-            </li>
-          ))}
+          {this.props.files.map(file => {
+            const activeFileStyles =
+              this.props.activeFile &&
+              this.props.activeFile.title === file.title
+                ? "active-file"
+                : "";
+
+            return (
+              <li
+                className={activeFileStyles}
+                key={file.title}
+                onClick={() => this.props.openFile(file)}
+              >
+                <span className="file-icon">
+                  <i className="fas fa-file-alt"></i>
+                </span>
+                <span>{file.title}</span>
+              </li>
+            );
+          })}
         </ul>
       );
     };
@@ -60,7 +82,8 @@ class EditorSelector extends Component {
 
 const mapStateToProps = state => {
   return {
-    files: state.allFiles
+    files: state.allFiles,
+    activeFile: state.activeFile
   };
 };
 
