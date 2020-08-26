@@ -6,7 +6,7 @@
   --dark-theme-bg-color-2: #1e1f24;
   --dark-theme-bg-color-3: #191a1f;
   --dark-theme-bg-color-4: #121212;
-  --active-file: #33ff33;
+  --active-file: #33ffff;
 }
 
 * {
@@ -283,4 +283,19 @@ span.btn-ico-large {
 
 .editor-keyword-1 {
   color: #7094db;
+}
+
+.editor-content a {
+  cursor: pointer;
+  color: #ffd11a;
+}
+
+.editor-text-label {
+  color: #99ff99;
+}
+
+.editor-text-value,
+.editor-text-value a {
+  text-decoration: none;
+  color: #cc99ff;
 }

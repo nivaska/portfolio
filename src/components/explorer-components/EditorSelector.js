@@ -15,10 +15,10 @@ class EditorSelector extends Component {
   componentDidMount() {
     const skillsFile = this.props.files.find(f => f.title === "skills.js");
     const experienceFile = this.props.files.find(
-      f => f.title === "experience.txt"
+      f => f.title === "about-me.txt"
     );
-    this.props.openFile(experienceFile);
     this.props.openFile(skillsFile);
+    this.props.openFile(experienceFile);
   }
 
   render() {

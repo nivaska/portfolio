@@ -6,6 +6,8 @@ export const getFileIcon = fileType => {
       return <i class="fab fa-js-square"></i>;
     case "md":
       return <i class="fab fa-markdown"></i>;
+    case "json":
+      return <b>{"{ }"}</b>;
     case "txt":
     default:
       return <i className="fas fa-file-alt"></i>;

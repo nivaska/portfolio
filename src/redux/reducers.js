@@ -1,13 +1,13 @@
 import { combineReducers } from "redux";
-import { skills } from "../textContent";
+import { skills, aboutMe, readMe, contact, projects } from "../textContent";
 
 const filesAvailable = () => {
   return [
     { title: "skills.js", type: "js", content: skills },
-    { title: "personal-info.txt", type: "txt", content: "c#, asp.net " },
-    { title: "experience.txt", type: "txt", content: "software developer " },
-    { title: "contact.txt", type: "txt", content: "nivas.anand@umlaut.com " },
-    { title: "README.MD", type: "md", content: "nivas.anand@umlaut.com " }
+    { title: "about-me.txt", type: "txt", content: aboutMe },
+    { title: "projects.txt", type: "txt", content: projects },
+    { title: "contact.json", type: "json", content: contact },
+    { title: "README.MD", type: "md", content: readMe }
   ];
 };
 
