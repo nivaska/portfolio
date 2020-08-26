@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { closeFile, openFile, setFileActive } from "../../redux/actions";
+import { getFileIcon } from "../utility";
 
 class EditorPicker extends Component {
   render() {
@@ -34,7 +35,7 @@ class EditorPicker extends Component {
                 onClick={() => this.props.openFile(file)}
               >
                 <span className="btn-icon-small">
-                  <i className="fas fa-file-alt"></i>
+                  <span className="file-icon">{getFileIcon(file.type)}</span>
                 </span>
                 {file.title}
                 <button

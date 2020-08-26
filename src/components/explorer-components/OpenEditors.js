@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { closeFile, openFile, setFileActive } from "../../redux/actions";
+import { getFileIcon } from "../utility";
 
 class OpenEditors extends Component {
   constructor(props) {
@@ -56,9 +57,7 @@ class OpenEditors extends Component {
                   <i className="fas fa-times"></i>
                 </button>
 
-                <span className="file-icon">
-                  <i className="fas fa-file-alt"></i>
-                </span>
+                <span className="file-icon">{getFileIcon(file.type)}</span>
 
                 <span>{file.title}</span>
               </li>

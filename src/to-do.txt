@@ -5,6 +5,10 @@ Help Menu-
 * create modal
 * open explore only on click of 
 
+show numbers on editor conent
+minify js
+apply formatting also for userinput
+
 * add site logo
 * add tooltips, animations for loading
 * dark and light - theme change under settings menu

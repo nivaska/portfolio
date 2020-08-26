@@ -8,7 +8,7 @@ class Toolbar extends Component {
     return (
       <div className="toolbar-left">
         <ul>
-          <li>
+          <li className="active-tab">
             <button className="btn-icon-large">
               <i className="far fa-copy"></i>
             </button>

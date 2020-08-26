@@ -156,7 +156,8 @@ span.btn-ico-large {
   text-align: center;
 }
 
-.toolbar-left .btn-icon-large:hover {
+.toolbar-left li:hover .btn-icon-large,
+.toolbar-left .active-tab .btn-icon-large {
   color: white;
 }
 /* ------------------------------- */
@@ -261,4 +262,25 @@ span.btn-ico-large {
 
 .editor-picker-list li:hover .close-btn {
   visibility: visible;
+}
+
+/* ------------------------------- */
+/* editor */
+
+.editor-content,
+.editor-content * {
+  outline: 0;
+  padding: 10px 25px;
+  white-space: pre;
+  font-family: Consolas, "Lucida Console";
+  line-height: 22px;
+}
+
+.editor-content * {
+  padding: 0;
+  margin: 0;
+}
+
+.editor-keyword-1 {
+  color: #7094db;
 }

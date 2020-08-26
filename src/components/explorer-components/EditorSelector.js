@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { openFile } from "../../redux/actions";
+import { getFileIcon } from "../utility";
 
 class EditorSelector extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class EditorSelector extends Component {
   }
 
   componentDidMount() {
-    const skillsFile = this.props.files.find(f => f.title === "skills.txt");
+    const skillsFile = this.props.files.find(f => f.title === "skills.js");
     const experienceFile = this.props.files.find(
       f => f.title === "experience.txt"
     );
@@ -46,7 +47,7 @@ class EditorSelector extends Component {
                 onClick={() => this.props.openFile(file)}
               >
                 <span className="file-icon">
-                  <i className="fas fa-file-alt"></i>
+                  <span className="file-icon">{getFileIcon(file.type)}</span>
                 </span>
                 <span>{file.title}</span>
               </li>
