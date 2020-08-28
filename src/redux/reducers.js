@@ -36,8 +36,24 @@ const fileActive = (state = null, action) => {
   }
 };
 
+const activeTab = (state = null, action) => {
+  switch (action.type) {
+    case "SET_ACTIVE_TAB": {
+      if (action.payload.tab === state && action.payload.active === false)
+        return null;
+      else if (action.payload.tab !== state && action.payload.active === true)
+        return action.payload.tab;
+      else return state;
+    }
+
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   allFiles: filesAvailable,
   openFiles: filesOpen,
-  activeFile: fileActive
+  activeFile: fileActive,
+  activeTab: activeTab
 });

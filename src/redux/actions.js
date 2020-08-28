@@ -18,3 +18,13 @@ export const setFileActive = file => {
     payload: file
   };
 };
+
+export const setFileTab = (tab, status) => {
+  return {
+    type: "SET_ACTIVE_TAB",
+    payload: {
+      tab: tab,
+      active: status
+    }
+  };
+};

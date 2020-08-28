@@ -1,2 +1,4 @@
-I made this app to imitate the UI of my favorite editor VS Code.
-This was built using React with Redux for state management.
+This is my portfolio app built with React.
+The design imitates VS Code editor.
+
+Hosted here: https://portfolio.nivaska.vercel.app/
