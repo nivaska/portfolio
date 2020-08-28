@@ -11,10 +11,9 @@ export const aboutMe = `
 Hey!
 
 This is Nivas. I am a software developer from Hamburg.
-I work with .Net framework and Microsoft SharePoint.
+I work on .Net framework and Microsoft SharePoint.
 
-I am also very interested in web development and like learning new technologies.
-JavaScript and C# are my favourite languages.
+Besides these I like web development a lot. JavaScript and C# are my favourite languages.
 
 <div contentEditable="false">
 Check out my CV <a href="https://drive.google.com/file/d/1uy4w4IIiSy-KHiGdHNLO648fHf4ZtvUA/view?usp=sharing" target="_blank">here</a>

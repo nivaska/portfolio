@@ -6,23 +6,29 @@ class MenuBar extends Component {
 
   render() {
     const getMenuItemsToRender = () => {
-      return this.menuItems.map(item => <li key={item}>{item}</li>);
+      return this.menuItems.map((item) => <li key={item}>{item}</li>);
     };
 
     const getMenuCommandsToRender = () => {
       return (
         <ul>
-          <li>
+          <li
+            className="command-minimise"
+            onClick={() => this.props.minimise(true)}
+          >
             <button className="btn-icon">
               <i className="far fa-window-minimize"></i>
             </button>
           </li>
-          <li>
+          <li
+            className="command-maximise"
+            onClick={() => this.props.minimise(false)}
+          >
             <button className="btn-icon">
               <i className="far fa-window-maximize"></i>
             </button>
           </li>
-          <li className="command-exit">
+          <li className="command-exit" onClick={() => this.props.closeApp()}>
             <button className="btn-icon">
               <i className="fas fa-times"></i>
             </button>

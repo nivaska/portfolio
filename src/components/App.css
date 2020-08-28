@@ -32,13 +32,74 @@ body {
   color: var(--dark-theme-font-color);
 }
 
+.window-container {
+  background-image: url("../resources/windows.jpg");
+}
+
 .main-window {
+  z-index: 10;
   height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   display: grid;
   grid-template-rows: 30px;
   grid-auto-rows: 1fr;
   gap: 5px;
+  transition: all ease-in-out 0.3s;
 }
+
+.desktop-icon {
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  width: 75px;
+  position: fixed;
+  top: 100px;
+  left: 30px;
+}
+
+.desktop-icon p {
+  padding: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  margin: 0;
+}
+
+.desktop-icon img {
+  width: 50px;
+}
+/* ------------------------------- */
+/* minimising*/
+.main-window.window-minimised {
+  height: 35px;
+  width: 300px;
+}
+
+.window-minimised .container,
+.window-minimised .menubar-items ul,
+.window-minimised .command-minimise {
+  display: none;
+}
+
+.window-minimised .menubar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-minimised .menubar-commands li {
+  padding: 5px;
+}
+
+.window-minimised .menubar-items {
+  min-width: 35px;
+}
+
+.window-minimised .menubar-commands {
+  min-width: 75px;
+}
+/* ------------------------------- */
 
 .btn-icon,
 .btn-icon-small,
