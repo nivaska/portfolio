@@ -42,9 +42,8 @@ export const contact = `
 `;
 
 export const readMe = `
-I made this app to imitate the UI of my favorite editor VS Code.
-This was built using React with Redux for state management.
-It is a work in progress. I plan to make it more interactive.
+I built this site with React using Redux for state management.
+The design imitates VS Code editor. I used icons from font-awesome.
 
 <div contentEditable="false">
 Check out the source code <a href="https://github.com/nivaska/portfolio" target="_blank">here</a>
