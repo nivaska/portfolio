@@ -3,7 +3,7 @@ import Modal from "./modal";
 
 class Toolbar extends Component {
   profileLink = "https://www.linkedin.com/in/nivas-k-22152b79/";
-  gitLink = "https://github.com/nivaska";
+  gitLink = "https://github.com/nivaska?tab=repositories";
 
   constructor(props) {
     super(props);
