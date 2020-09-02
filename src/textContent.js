@@ -13,7 +13,7 @@ Hey!
 This is Nivas. I am a software developer from Hamburg.
 I work on .Net framework and Microsoft SharePoint.
 
-Besides these I like web development. JavaScript and C# are my favourite languages.
+I am also very interested in web development and I like programming in JavaScript and C#.
 
 <div contentEditable="false">
 Check out my CV <a href="https://drive.google.com/file/d/1uy4w4IIiSy-KHiGdHNLO648fHf4ZtvUA/view?usp=sharing" target="_blank">here</a>

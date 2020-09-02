@@ -8,15 +8,24 @@ class EditorSelector extends Component {
     super(props);
     this.state = {
       title: props.title,
-      expanded: true
+      expanded: true,
     };
   }
 
   componentDidMount() {
-    const skillsFile = this.props.files.find(f => f.title === "skills.js");
-    const experienceFile = this.props.files.find(
-      f => f.title === "about-me.txt"
+    const skillsFile = this.props.files.find((f) => f.title === "skills.js");
+    const projectsFile = this.props.files.find(
+      (f) => f.title === "projects.txt"
     );
+    const contactFile = this.props.files.find(
+      (f) => f.title === "contact.json"
+    );
+
+    const experienceFile = this.props.files.find(
+      (f) => f.title === "about-me.txt"
+    );
+    this.props.openFile(projectsFile);
+    this.props.openFile(contactFile);
     this.props.openFile(skillsFile);
     this.props.openFile(experienceFile);
   }
@@ -33,7 +42,7 @@ class EditorSelector extends Component {
     const renderFilesList = () => {
       return (
         <ul className="list-editors">
-          {this.props.files.map(file => {
+          {this.props.files.map((file) => {
             const activeFileStyles =
               this.props.activeFile &&
               this.props.activeFile.title === file.title
@@ -81,10 +90,10 @@ class EditorSelector extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     files: state.allFiles,
-    activeFile: state.activeFile
+    activeFile: state.activeFile,
   };
 };
 
