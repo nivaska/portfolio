@@ -12,7 +12,7 @@ class Explorer extends Component {
     return (
       <div className="explorer">
         <OpenEditors title="OPEN EDITORS" />
-        <EditorSelector title="ANOTHER PORTFOLIO" />
+        <EditorSelector title="PORTFOLIO" />
       </div>
     );
   }

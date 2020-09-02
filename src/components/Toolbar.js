@@ -1,9 +1,17 @@
 import React, { Component } from "react";
+import Modal from "./modal";
 
 class Toolbar extends Component {
   profileLink = "https://www.linkedin.com/in/nivas-k-22152b79/";
   gitLink = "https://github.com/nivaska";
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+      modalState: {},
+    };
+  }
   render() {
     return (
       <div className="toolbar-left">
@@ -19,14 +27,26 @@ class Toolbar extends Component {
             </button>
           </li>
           <li>
-            <a
+            <button
               className="btn-icon-large"
-              rel="noopener noreferrer"
-              href={this.gitLink}
-              target="_blank"
+              onClick={() =>
+                this.setState({
+                  showModal: true,
+                  modalState: {
+                    Content: "Would you like to open my Github profile?",
+                    CancelAction: () => {
+                      this.setState({ showModal: false });
+                    },
+                    OkAction: () => {
+                      window.open(this.gitLink, "_blank");
+                      this.setState({ showModal: false });
+                    },
+                  },
+                })
+              }
             >
               <i className="fas fa-code-branch"></i>
-            </a>
+            </button>
           </li>
           <li>
             <button className="btn-icon-large">
@@ -41,14 +61,26 @@ class Toolbar extends Component {
         </ul>
         <ul>
           <li>
-            <a
+            <button
               className="btn-icon-large"
-              href={this.profileLink}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() =>
+                this.setState({
+                  showModal: true,
+                  modalState: {
+                    Content: "Would you like to open my LinkedIn profile?",
+                    CancelAction: () => {
+                      this.setState({ showModal: false });
+                    },
+                    OkAction: () => {
+                      window.open(this.profileLink, "_blank");
+                      this.setState({ showModal: false });
+                    },
+                  },
+                })
+              }
             >
               <i className="far fa-user-circle"></i>
-            </a>
+            </button>
           </li>
           <li>
             <button className="btn-icon-large">
@@ -56,6 +88,14 @@ class Toolbar extends Component {
             </button>
           </li>
         </ul>
+
+        <Modal
+          Show={this.state.showModal}
+          OkAction={this.state.modalState.OkAction}
+          CancelAction={this.state.modalState.CancelAction}
+        >
+          {this.state.modalState.Content}
+        </Modal>
       </div>
     );
   }

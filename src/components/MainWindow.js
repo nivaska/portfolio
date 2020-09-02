@@ -8,8 +8,7 @@ class MainWindow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      minimised: false,
-      windowClosed: props.windowClosed,
+      minimised: this.props.Minimised,
     };
   }
 
@@ -18,7 +17,7 @@ class MainWindow extends Component {
       ? `${this.props.activeFile.title} - Nivas (Beta)`
       : "Nivas (Beta)";
 
-    return this.state.windowClosed ? null : (
+    return (
       <div
         className={`main-window theme-dark ${
           this.state.minimised ? "window-minimised" : ""
@@ -29,7 +28,7 @@ class MainWindow extends Component {
           minimise={(status) => {
             this.setState({ minimised: status });
           }}
-          closeApp={() => this.setState({ windowClosed: true })}
+          closeApp={() => this.props.CloseWindow()}
         />
         <Container />
       </div>

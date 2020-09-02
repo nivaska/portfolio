@@ -59,6 +59,13 @@ body {
   left: 30px;
 }
 
+.desktop-icon:hover {
+  background-color: #1ab2ff;
+  border-radius: 5px;
+  border: 1px solid #0088cc;
+  width: 75px;
+}
+
 .desktop-icon p {
   padding: 1px;
   font-family: Arial, Helvetica, sans-serif;
